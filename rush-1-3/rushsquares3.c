@@ -60,9 +60,4 @@ void rush(int col, int row)
         write(1, "\n", 1);
     }
 }
-int main(void)
-{
-    rush(5, 5);
-    return 0;
-}
 

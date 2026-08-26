@@ -26,12 +26,3 @@ void rush(int x, int y)
         }write(1,"\n",1);
     }
 }
-
-int main(void)
-{
-    rush(5,1);
-    rush(5,3);
-    rush(1,1);
-    rush(1,5);
-    return 0;
-}
