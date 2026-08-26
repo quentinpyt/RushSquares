@@ -1,10 +1,9 @@
 #include <unistd.h>
-void my_putchar(char c);
 
 void rush(int x, int y)
 {
     if (x <= 0 || y <= 0) {
-        write(2, "Invalid size\n", 13);
+        write(1, "Invalid size\n", 13);
         return;
     }
     for (int row = 0; row < y; row++){
@@ -17,13 +16,22 @@ void rush(int x, int y)
             int is_vertical_edge   = is_left || is_right;
             
             if (is_horizontal_edge && is_vertical_edge) {
-                my_putchar('o');}
+                write(1, "o" ,1);}
             else if (is_horizontal_edge) {
-                my_putchar('-');}
+                write(1, "-" ,1);}
             else if (is_vertical_edge) {
-                my_putchar('|');}
+                write(1, "|" ,1);}
             else {
-                my_putchar(' ');}
-        }my_putchar('\n');
+                write(1, " " ,1);}
+        }write(1,"\n",1);
     }
-} 
+}
+
+int main(void)
+{
+    rush(5,1);
+    rush(5,3);
+    rush(1,1);
+    rush(1,5);
+    return 0;
+}
